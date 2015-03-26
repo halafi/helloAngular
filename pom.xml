@@ -26,10 +26,17 @@
         <!--<version.jackson>2.5.1</version.jackson>-->
         <version.hibernate>4.3.8.Final</version.hibernate>
         <version.hsqldb>2.3.2</version.hsqldb>
+        <version.dozer>5.5.1</version.dozer>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- dozer -->
+            <dependency>
+                <groupId>net.sf.dozer</groupId>
+                <artifactId>dozer</artifactId>
+                <version>${version.dozer}</version>
+            </dependency>
             <!-- hibernate -->
             <dependency>
                 <groupId>org.hibernate</groupId>

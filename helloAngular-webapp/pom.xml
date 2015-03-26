@@ -12,6 +12,11 @@
     <packaging>war</packaging>
 
     <dependencies>
+        <!-- dozer -->
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+        </dependency>
         <!-- hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>

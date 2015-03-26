@@ -2,6 +2,8 @@ package fh.helloAngular.dao.hibernateImpl;
 
 import fh.helloAngular.dao.UserDao;
 import fh.helloAngular.domain.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -13,6 +15,8 @@ import java.util.List;
  */
 @Transactional
 public class UserDaoImpl implements UserDao {
+
+    //final Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
 
     @PersistenceContext
     private EntityManager em;

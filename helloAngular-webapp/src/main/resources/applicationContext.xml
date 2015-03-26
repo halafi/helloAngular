@@ -13,6 +13,8 @@
     <tx:annotation-driven />
     <context:annotation-config/>
 
+    <bean id="dozer" class="org.dozer.DozerBeanMapper"></bean>
+
     <bean id="userDao" class="fh.helloAngular.dao.hibernateImpl.UserDaoImpl" />
 
     <bean id="dataSource"
