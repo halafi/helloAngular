@@ -11,6 +11,7 @@
 
     <modules>
         <module>helloAngular-webapp</module>
+        <module>helloAngular-frontend</module>
     </modules>
 
     <properties>
@@ -54,22 +55,6 @@
                 <artifactId>hsqldb</artifactId>
                 <version>${version.hsqldb}</version>
             </dependency>
-            <!-- jackson json mapping -->
-            <!--<dependency>-->
-                <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-                <!--<artifactId>jackson-core</artifactId>-->
-                <!--<version>${version.jackson}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-                <!--<artifactId>jackson-databind</artifactId>-->
-                <!--<version>${version.jackson}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
-                <!--<artifactId>jackson-datatype-joda</artifactId>-->
-                <!--<version>${version.jackson}</version>-->
-            <!--</dependency>-->
             <!-- joda-time -->
             <dependency>
                 <groupId>joda-time</groupId>
