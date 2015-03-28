@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -44,7 +45,7 @@ public class UserDaoTest {
         assertEquals(user, userFromDb);
         try {
             userDao.createUser(null);
-        } catch (IllegalArgumentException ex) {
+        } catch (DataAccessException ex) {
             return;
         }
         fail("created null user");
@@ -96,7 +97,7 @@ public class UserDaoTest {
         assertEquals(em.createQuery("SELECT u FROM User u", User.class).getResultList().size(), 0);
         try {
             userDao.deleteUser(null);
-        } catch (IllegalArgumentException ex) {
+        } catch (DataAccessException ex) {
             return;
         }
         fail("deleting null user did not throw exception");

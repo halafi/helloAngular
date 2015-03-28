@@ -1,4 +1,4 @@
-package fh.helloAngular.controller;
+package fh.helloAngular.rest;
 
 /**
  * Created by filip on 28.3.15.
@@ -7,6 +7,7 @@ package fh.helloAngular.controller;
 import fh.helloAngular.dto.UserDto;
 import fh.helloAngular.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -15,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/user")
+@Component
 public class UserResource {
 
     @Autowired
