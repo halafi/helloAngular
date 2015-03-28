@@ -4,6 +4,7 @@ import fh.helloAngular.dao.UserDao;
 import fh.helloAngular.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -13,6 +14,7 @@ import java.util.List;
 /**
  * Created by filip on 26.3.15.
  */
+@Repository
 @Transactional
 public class UserDaoImpl implements UserDao {
 
@@ -55,6 +57,11 @@ public class UserDaoImpl implements UserDao {
         if (user == null) {
             throw new IllegalArgumentException("User is null");
         }
-        em.remove(user);
+        em.remove(em.merge(user));
+    }
+
+    @Override
+    public void deleteAllUsers() {
+        em.createNativeQuery("TRUNCATE TABLE User").executeUpdate();
     }
 }

@@ -13,9 +13,13 @@
     <tx:annotation-driven />
     <context:annotation-config/>
 
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
     <bean id="dozer" class="org.dozer.DozerBeanMapper"></bean>
 
-    <bean id="userDao" class="fh.helloAngular.dao.hibernateImpl.UserDaoImpl" />
+    <!--<bean id="userDao" class="fh.helloAngular.dao.hibernateImpl.UserDaoImpl" />-->
+    <context:component-scan base-package="fh.helloAngular.dao" />
+    <context:component-scan base-package="fh.helloAngular.service" />
 
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">

@@ -11,7 +11,18 @@
     <artifactId>helloAngular-webapp</artifactId>
     <packaging>war</packaging>
 
+    <properties>
+        <version.javax.ws.rs>2.0.1</version.javax.ws.rs>
+    </properties>
+
+
     <dependencies>
+        <!-- rest -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>${version.javax.ws.rs}</version>
+        </dependency>
         <!-- dozer -->
         <dependency>
             <groupId>net.sf.dozer</groupId>
@@ -32,16 +43,16 @@
             <artifactId>hsqldb</artifactId>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-            <!--<artifactId>jackson-core</artifactId>-->
+        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+        <!--<artifactId>jackson-core</artifactId>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-            <!--<artifactId>jackson-databind</artifactId>-->
+        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+        <!--<artifactId>jackson-databind</artifactId>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>joda-time</groupId>-->
-            <!--<artifactId>joda-time</artifactId>-->
+        <!--<groupId>joda-time</groupId>-->
+        <!--<artifactId>joda-time</artifactId>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
