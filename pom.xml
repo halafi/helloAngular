@@ -11,7 +11,6 @@
 
     <modules>
         <module>helloAngular-webapp</module>
-        <module>helloAngular-frontend</module>
     </modules>
 
     <properties>
