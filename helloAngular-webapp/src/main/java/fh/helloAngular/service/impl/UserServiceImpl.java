@@ -38,7 +38,11 @@ public class UserServiceImpl implements UserService {
         if (id == null) {
             throw new IllegalArgumentException("id is null");
         }
-        return dozer.map(userDao.getUser(id), UserDto.class);
+        User user = userDao.getUser(id);
+        if (user == null) {
+            return null;
+        }
+        return dozer.map(user, UserDto.class);
     }
 
     @Override
