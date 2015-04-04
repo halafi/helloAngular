@@ -1,16 +1,25 @@
 var services = angular.module('services', ['ngResource']);
 
 services.factory('UserService', ['$resource', function ($resource) {
-    return $resource('rest/user/users:id', {id: '@id'}, {
+    return $resource('http://localhost:8080/helloAngular/rest/user/:userId', {userId: '@id'}, {
         query: {
-            method: 'GET', params: {}, isArray: true
+            method: 'GET', isArray: true, interceptor: {responseError: handleResponseError}
         },
-        post: {
-            method: 'POST'
+        save: {
+            method: 'POST', interceptor: {responseError: handleResponseError}
+        },
+        update: {
+            method: 'PUT', interceptor: {responseError: handleResponseError}
+        },
+        get: {
+            method: 'GET', interceptor: {responseError: handleResponseError}
+        },
+        remove: {
+            method: 'DELETE', interceptor: {responseError: handleResponseError}
         }
-        /*update: {},
-        get: {},
-        set: {},
-        remove: {}*/
     });
 }]);
+
+function handleResponseError() {
+    alert("Internal server error.");
+}

@@ -32,7 +32,6 @@ public class UserResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/users")
     public List<UserDto> getAllUsers() {
         return userService.getAllUsers();
     }
