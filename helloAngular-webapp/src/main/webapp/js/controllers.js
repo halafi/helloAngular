@@ -4,10 +4,10 @@ controllers
     .controller('UserController', ['$scope', '$state', 'UserService', function ($scope, $state, User) {
         $scope.orderProp = "id";
         $scope.userForm = new User();
-        $scope.model = {selected: {}};
+        $scope.userEditted = {};
         $scope.users = User.query();
         $scope.getTemplate = function (user) {
-            if (user.id === $scope.model.selected.id) return 'edit';
+            if (user.id === $scope.userEditted.id) return 'edit';
             else return 'display';
         };
         $scope.deleteUser = function (id) {
@@ -23,14 +23,15 @@ controllers
             });
         };
         $scope.editUser = function (user) {
-            $scope.model.selected = angular.copy(user);
+            $scope.userEditted = angular.copy(user);
         }
         $scope.updateUser = function (user) {
             User.update({userId: user.id}, user, function () {
-                console.log(user);
                 $scope.users = User.query();
-                $scope.model.selected = {};
-                //$scope.userForm = new User();
+                $scope.reset();
             })
+        }
+        $scope.reset = function () {
+            $scope.userEditted = {};
         }
     }])
