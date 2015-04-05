@@ -49,9 +49,15 @@ public class UserResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/{id}")
-    public Response updateUser(String user, @PathParam("id") Long id) {
-        log.info(user, id);
-        return null;
+    public Response updateUser(String userJSON, @PathParam("id") Long id) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        UserDto userDtoNew = mapper.readValue(userJSON, new TypeReference<UserDto>(){});
+        //UserDto userDto = userService.getUser(id);
+        if (userDtoNew != null) {
+            userService.updateUser(userDtoNew);
+            return Response.ok().build();
+        }
+        return Response.noContent().build();
     }
 
 
@@ -68,8 +74,9 @@ public class UserResource {
         UserDto user = userService.getUser(id);
         if (user != null) {
             userService.deleteUser(user);
+            return Response.ok().build();
         }
-        return null;
+        return Response.noContent().build();
     }
 
 

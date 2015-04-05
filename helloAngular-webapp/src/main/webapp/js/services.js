@@ -1,7 +1,7 @@
 var services = angular.module('services', ['ngResource']);
 
 services.factory('UserService', ['$resource', function ($resource) {
-    return $resource('http://localhost:8080/helloAngular/rest/user/:userId', {userId: '@id'}, {
+    return $resource('rest/user/:userId', {userId: '@id'}, {
         query: {
             method: 'GET', isArray: true, interceptor: {responseError: handleResponseError}
         },
