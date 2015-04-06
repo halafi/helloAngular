@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="
+             http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans.xsd
+             http://www.springframework.org/schema/security
+		     http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!--<http pattern="/login.html" security="none"/>-->
+    <!--<http use-expressions="false">-->
+        <!--<intercept-url pattern='/index.html' access='ROLE_USER' />-->
+        <!--<intercept-url pattern='/rest/**' access='ROLE_USER' />-->
+        <!--<form-login login-page='/login.html' default-target-url='/' always-use-default-target='true' />-->
+    <!--</http>-->
+
+    <!--<global-method-security>-->
+        <!--<protect-pointcut expression="execution(* fh.helloAngular.service.impl.*ServiceImpl.get*(..))" access="ROLE_USER"/>-->
+        <!--<protect-pointcut expression="execution(* fh.helloAngular.service.impl.*ServiceImpl.delete*(..))" access="ROLE_ADMIN"/>-->
+        <!--<protect-pointcut expression="execution(* fh.helloAngular.service.impl.*ServiceImpl.update*(..))" access="ROLE_ADMIN"/>-->
+        <!--<protect-pointcut expression="execution(* fh.helloAngular.service.impl.*ServiceImpl.create*(..))" access="ROLE_ADMIN"/>-->
+    <!--</global-method-security>-->
+
+    <!--<authentication-manager erase-credentials="false">-->
+        <!--<authentication-provider>-->
+            <!--<user-service>-->
+                <!--<user name="admin" password="admin" authorities="ROLE_USER, ROLE_ADMIN"/>-->
+                <!--<user name="user" password="user" authorities="ROLE_USER"/>-->
+            <!--</user-service>-->
+        <!--</authentication-provider>-->
+    <!--</authentication-manager>-->
+
+</beans:beans>
